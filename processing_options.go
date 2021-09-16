@@ -1228,6 +1228,19 @@ func parsePath(ctx context.Context, r *http.Request) (context.Context, error) {
 	if err != nil {
 		return ctx, newError(404, err.Error(), msgInvalidURL)
 	}
+	var is_domain_accepted = false;
+	accepted_domains := []string{"https://s3-newsifier.ams3.digitaloceanspaces.com"}
+	for _, domain := range accepted_domains {
+	
+		if strings.Contains(imageURL, domain) 	{
+			is_domain_accepted = true
+			
+		}
+	}
+	if !is_domain_accepted {
+		return ctx,newError(403, "Invalid newsifier url" , msgInvalidURL)
+	}
+	
 
 	if !isAllowedSource(imageURL) {
 		return ctx, newError(404, "Invalid source", msgInvalidSource)
