@@ -401,7 +401,7 @@ func configure() error {
 	}
 	intEnvConfig(&conf.MaxAnimationFrames, "IMGPROXY_MAX_ANIMATION_FRAMES")
 
-	os.Setenv("IMGPROXY_ALLOWED_SOURCES" , "https://s3-newsifier.ams3.digitaloceanspaces.com/");
+	fmt.Println( os.Getenv("IMGPROXY_ALLOWED_SOURCES") )
 	patternsEnvConfig(&conf.AllowedSources, "IMGPROXY_ALLOWED_SOURCES")
 
 	intEnvConfig(&conf.AvifSpeed, "IMGPROXY_AVIF_SPEED")
