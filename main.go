@@ -55,7 +55,6 @@ func run() error {
 		return err
 	}
 
-
 	defer shutdownVips()
 	defer closeErrorsReporting()
 
