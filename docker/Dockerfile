@@ -31,6 +31,6 @@ ENV IMGPROXY_ALLOWED_SOURCES=https://s3-newsifier.ams3.digitaloceanspaces.com/
 ENV MALLOC_ARENA_MAX=2
 ENV LD_LIBRARY_PATH /usr/local/lib
 
-CMD [ "imgproxy"]
+CMD ["imgproxy"]
 
 EXPOSE 8080
